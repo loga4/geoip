@@ -16,7 +16,7 @@ class GeoIP {
 
     protected $driver;
 
-    public function __construct(Repository $config)
+    public function __construct()
     {
         print_r($config);
         //$this->db_location = app_path().'/database/sypexgeo/'.$this->db_name;
