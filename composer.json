@@ -1,0 +1,23 @@
+{
+    "name": "logach/geoip",
+    "description": "GeoIP for Laravel4",
+    "keywords": ["laravel", "geoip", "geolocation","sypex","ip-api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "loga4",
+            "email": "logach3@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*",
+        "guzzlehttp/guzzle": "5.0.*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Logach\\Geoip\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
