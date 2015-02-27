@@ -1,5 +1,5 @@
 {
-    "name": "logach/geoip",
+    "name": "loga4/geoip",
     "description": "GeoIP for Laravel4",
     "keywords": ["laravel", "geoip", "geolocation","sypex","ip-api"],
     "license": "MIT",
