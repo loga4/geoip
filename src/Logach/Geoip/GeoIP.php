@@ -16,16 +16,9 @@ class GeoIP {
 
     protected $driver;
 
-    public function __construct()
+    public function __construct(Repository $config)
     {
-        print_r($config);
-        //$this->db_location = app_path().'/database/sypexgeo/'.$this->db_name;
-
-        /*if(!is_file($this->db_location)) {
-            throw new \Exception('Cant find file:'.$this->db_location);
-        }*/
-
-        die;
+        $this->driver = (new DriverManager($config))->getDriver($config->get('geoip::driver'));
     }
 
     public function getLocation($ip = null)
@@ -34,13 +27,14 @@ class GeoIP {
             $ip = $this->getClientIP();
         }
 
-        $location = $this->find($ip);
+        $location = $this->getDriver()->get($ip);
 
-        if($location) {
-            return $location;
-        }
+        return ($location) ?: false;
+    }
 
-        return false;
+    protected function getDriver()
+    {
+        return $this->driver;
     }
 
     protected function find($ip = null)
