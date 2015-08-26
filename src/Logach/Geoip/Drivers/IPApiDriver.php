@@ -34,7 +34,8 @@ class IPApiDriver {
         $client = new Client();
 
         try {
-            $data = $client->get('http://ip-api.com/json/'.$ip)->json();
+            $data = $client->get('http://ip-api.com/json/'.$ip)->getBody();
+            $data = json_decode($data);
 
             if($data && $data['status']=='success') {
                 return $data;
